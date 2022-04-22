@@ -112,7 +112,12 @@ public class Ejercicio {
    @GetMapping("/listarchistes")
    public String jokeList(){
         ArrayList<Joke> jokes = jokeService.getAllJokes();
-        return jokes.toString();
+        String listado = "";
+        for(Joke joke: jokes){
+            listado += joke.getText();
+            listado += "<br/>";
+        }
+        return listado;
    }
 
    @PostMapping("/insertarchiste")
@@ -124,10 +129,4 @@ public class Ejercicio {
         return "Chiste creado correctamente";
    }
 
-
-   // insertar un nuevo chiste
 }
-
-
-
-

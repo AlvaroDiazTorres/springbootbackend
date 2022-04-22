@@ -22,4 +22,9 @@ public class WebController {
         model.addAttribute("persons", persons);
         return "rickandmorty";
     }
+
+    @RequestMapping("/formularioChiste")
+    public String getFormularioChiste(Model model){
+        return "formularioInsercionChiste";
+    }
 }
