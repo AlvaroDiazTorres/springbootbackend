@@ -5,12 +5,13 @@ import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Map;
-
+    
 import com.example.demo.models.Joke;
 import com.example.demo.models.Person;
 import com.example.demo.services.JokeService;
 import com.example.demo.services.RickAndMortyService;
 import com.example.demo.utils.Utils;
+import com.example.demo.models.alvaro;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -128,5 +129,12 @@ public class Ejercicio {
         jokeService.saveJoke(joke);
         return "Chiste creado correctamente";
    }
+
+   @GetMapping("/girar")
+    public String add(@RequestParam String frase) {
+        frase = alvaro.voltear(frase);
+        frase = alvaro.invertir(frase);
+        return frase;
+    }
 
 }
